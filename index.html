@@ -4,14 +4,148 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 2</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <script src="Assignment2VisVegalite.js"></script>
+
+    <link rel="stylesheet" href="Format.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/grids-responsive-min.css" />
+
+    <title>The international arms trade</title>
 </head>
 <body>
     <h1>First paragraph</h1>
     <p>Here is some text for the first paragraph.</p>
     <img src="crush kids.jpg"/>
+    
+    <hr>
+    
+    <p>Here is the first vega lite vis</p>
+    <div id="bar_chart">
+
+    </div>
+    
+    <hr>
+    
+    <p>Here is the second vega lite vis, a map!</p>
+    <div id="map_one">
+
+    </div>
+    
+    <hr>
+    
+    <p>Here is the third vega lite vis, a chlorpeth map!</p>
+    <div id="map_two">
+
+    </div>
+
+    <hr>
+    
+    <p>Here is the fourth vega lite vis, a bubble chart!</p>
+    <div id="bubble_one">
+
+    </div>
+
+    <hr>
+
     <h1>References</h1>
     <p>Data couretsy of SIPRI inline with their policy on fair use</p>
     <a href="https://www.sipri.org/databases">Sipri arms trade databases</a>
+
+    <hr>
+
+    <div class="pure-g">
+        <div class="pure-u-1-3"><p>Thirds</p></div>
+        <div class="pure-u-1-3"><p>Thirds</p></div>
+        <div class="pure-u-1-3"><p>Thirds</p></div>
+    </div>
+
+    <hr>
+
+    <div class="pure-g">
+        <div class="pure-u-1-5"><p>Fifths</p></div>
+        <div class="pure-u-1-5"><p>Fifths</p></div>
+        <div class="pure-u-1-5"><p>Fifths</p></div>
+        <div class="pure-u-1-5"><p>Fifths</p></div>
+        <div class="pure-u-1-5"><p>Fifths</p></div>
+    </div>
+
+    <hr>
+
+    <div class="pure-g">
+        <div class="pure-u-2-3">
+            <p>Two thirds</p>
+        </div>
+        <div class="pure-u-1-3">
+            <p>third</p>
+        </div>
+    </div>
+    
+    <hr>
+
+    <div class="pure-g">
+        <div class="pure-u-3-5">
+            <h1>The global arms trade</h1>
+            <p>Every year, across the globe, almost every nation engages in the global arms trade. 
+                While this may conjure images of black market deals and shady crates being handed over on shadier docks, 
+                the reality of modern arms production is that the vast majority of modern systems cannot be produced anywhere. 
+                Between the restrictions placed on a countries armies by its governments alliances, to the practical difficulties
+                involved in manufacturing high tech weapons systems, many countries have no choice but to resort to their neighbours 
+                for arms, and many others simply decide that a second hand system, or one produced by an ally is a more fiscally reasonable 
+                choice.</p>
+        </div>
+        <div class="pure-u-2-5">
+            <div id="bubble_one_2" class="vis-container"></div>
+        </div>
+    </div>
+    
+    <div class="pure-g">
+        <div class="pure-u-2-5">
+            <div id="bubble_one_3" class="vis-container"></div>
+        </div>
+        <div class="pure-u-1-5">
+            <h2>international arms imports</h2>
+            <p>
+                Imports imports imports, lorem ipsum dolar sit amet. Imports 
+                imports imports, lorem ipsum dolar sit amet. Imports imports 
+                imports, lorem ipsum dolar sit amet. Imports imports imports, 
+                lorem ipsum dolar sit amet. Imports imports imports, lorem 
+                ipsum dolar sit amet. Imports imports imports, lorem ipsum dolar 
+                sit amet. Imports imports imports, lorem ipsum dolar sit amet. Imports 
+                imports imports, lorem ipsum dolar sit amet. Imports imports imports, 
+                lorem ipsum dolar sit amet. 
+            </p>
+        </div>
+        <div class="pure-u-2-5">
+            <div id="bubble_one_4" class="vis-container"></div>
+        </div>
+    </div>
+    <div class="pure-g">
+        <div class="pure-u-2-5">
+            <div id="bubble_one_5" class="vis-container"></div>
+        </div>
+        <div class="pure-u-1-5">
+            <h2>international arms exports</h2>
+            <p>
+                exports exports exports, lorem ipsum dolar sit amet. exports 
+                exports exports, lorem ipsum dolar sit amet. Imports imports 
+                imports, lorem ipsum dolar sit amet. Imports imports imports, 
+                lorem ipsum dolar sit amet. Imports imports imports, lorem 
+                ipsum dolar sit amet. Imports imports imports, lorem ipsum dolar 
+                sit amet. Imports imports imports, lorem ipsum dolar sit amet. Imports 
+                imports imports, lorem ipsum dolar sit amet. Imports imports imports, 
+                lorem ipsum dolar sit amet. 
+            </p>
+        </div>
+        <div class="pure-u-2-5">
+            <div id="bubble_one_6" class="vis-container"></div>
+        </div>
+    </div>
 </body>
 </html>
