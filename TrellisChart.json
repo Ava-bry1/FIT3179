@@ -1,11 +1,17 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "Temperature normals in Seattle. Derived from [Seattle Annual Temperate](https://vega.github.io/vega/examples/annual-temperature/) example from the Vega example gallery.",
-    "title": "TIV Exports of arms (millions of USD)",
+    "title": {
+      "text": "TIV Exports of arms (millions of USD)",
+      "color": "#C2D6C8",
+      "fontSize": 24,
+      "align": "left"
+    },
     "data": {"url": "TIV_Export_top_25_pivoted.csv"},
     "transform": [
       {"calculate": "datum.Rank", "as": "order"}
     ],
+    "background": "#EAFDF808",
     "spacing": {"row": 1},
     "facet": {
       "row": {
@@ -16,12 +22,17 @@
           "labelAngle": 0,
           "labelPadding": 2,
           "titlePadding": -4,
-          "labelAlign": "left"
+          "labelAlign": "left",
+          "labelColor": "#C2D6C8",
+          "labelFontSize": 15,
+          "titleColor": "#C2D6C8",
+          "titleFontSize": 24,
+          "title": "Top 25 arms suppliers"
         }
       }
     },
     "spec": {
-      "width": 1000,
+      "width": 800,
       "height": 50,
       "view": {"stroke": null},
       "mark": "area",
@@ -31,7 +42,14 @@
           "type": "temporal",
           "title": "Year",
           "timeUnit": "year",
-          "axis": {"format": "%Y"}
+          "axis": {
+            "format": "%Y",
+            "labelColor": "#C2D6C8",
+            "labelFontSize": 15,
+            "title": "Year",
+            "titleColor": "#C2D6C8",
+            "titleFontSize": 24
+          }
         },
         "y": {
           "field": "TIV",
@@ -39,6 +57,9 @@
           "aggregate": "mean",
           "scale": {"zero": false},
           "axis": {"title": null, "labels": false, "ticks": false}
+        },
+        "color": {
+          "value": "#C2D6C8"
         }
       }
     },

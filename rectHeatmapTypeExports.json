@@ -3,14 +3,19 @@
     "data": {
         "url": "TIV_Type_trade_clean.csv"
     },
-    "title": "Arms exports by type and year",
+    "title": {
+        "text": "Arms exports by type and year",
+        "color": "#C2D6C8",
+        "fontSize": 24 
+    },
+    "background": "#EAFDF808",
     "transform": [
         {"calculate": "datum.TIV", "as": "TIV_recalc"}
       ],
     "config": {
         "view": {
             "strokeWidth": 0,
-            "step": 10
+            "step": 12
         },
         "axis": {
             "domain": false
@@ -25,13 +30,21 @@
             "title": "Year",
             "axis": {
                 "labelAngle": 0,
-                "format": "%Y"
+                "format": "%Y",
+                "labelColor": "#C2D6C8",
+                "labelFontSize": 15
             }
         },
         "y": {
             "field": "Type",
             "type": "nominal",
-            "title": "Month"
+            "axis": {
+                "labelColor": "#C2D6C8",
+                "titleColor": "#C2D6C8",
+                "title": "Weapon system type",
+                "labelFontSize": 12,
+                "titleFontSize": 16
+            }
         },
         "color": {
             "field": "TIV_recalc",
@@ -39,13 +52,17 @@
             "type": "quantitative",
             "legend": {
                 "title": "Trend indicator value (TIV, millions)",
-                "direction": "horizontal",
-                "orient": "bottom"
-            }
+                "direction": "vertical",
+                "orient": "right",
+                "labelColor": "#C2D6C8",
+                "titleColor": "#C2D6C8",
+                "labelFontSize": 15
+            },
+            "scale": {"type": "log", "range": ["#EAFDF8", "#6D90B0", "#252318"]}
         },
         "tooltip": [
-          {"field": "Type", "type": "nominal", "title": "Arms type: "},
-          {"field": "TIV", "type": "quantitative", "title": "Traded TIV (millions)"}
+            {"field": "Type", "type": "nominal", "title": "Arms type: "},
+            {"field": "TIV", "type": "quantitative", "title": "Traded TIV (millions)"}
         ]
     }
   }

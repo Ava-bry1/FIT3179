@@ -2,9 +2,10 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 800,
     "height": 450,
-    "title": "Trend indicator value (TIV) of imports of arms worldwide",
+    "title": {"text": "Trend indicator value (TIV) of imports of arms worldwide", "color": "#EAFDF8", "fontSize": 20},
     "projection": {"type": "equirectangular"},
-    
+    "padding": {"top": 5, "left": 20},
+    "background": "#2E2754",
     "data": {
         "url": "ne_110m.json",
         "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
@@ -26,9 +27,17 @@
       "mark": {"type": "geoshape"},
       "encoding": {
         "color": {
-          "field": "Total Imports",
+          "field": "Totals",
           "type": "quantitative",
-          "scale": {"type": "log"}
+          "scale": {"type": "log", "range": ["#EAFDF8", "#C2D6C8", "#6D90B0"]},
+            "legend": {
+              "title": "Trend indicator value (TIV, millions)",
+              "direction": "vertical",
+              "orient": "right",
+              "labelColor": "#C2D6C8",
+              "titleColor": "#C2D6C8",
+              "labelFontSize": 15
+          }
         },
         "tooltip": [
           {"field": "properties.NAME", "type": "nominal", "title": "Country"},
