@@ -1,0 +1,46 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Temperature normals in Seattle. Derived from [Seattle Annual Temperate](https://vega.github.io/vega/examples/annual-temperature/) example from the Vega example gallery.",
+    "title": "TIV Exports of arms (millions of USD)",
+    "data": {"url": "TIV_Export_top_25_pivoted.csv"},
+    "transform": [
+      {"calculate": "datum.Rank", "as": "order"}
+    ],
+    "spacing": {"row": 1},
+    "facet": {
+      "row": {
+        "field": "Supplier",
+        "type": "ordinal",
+        "sort": {"field": "order"},
+        "header": {
+          "labelAngle": 0,
+          "labelPadding": 2,
+          "titlePadding": -4,
+          "labelAlign": "left"
+        }
+      }
+    },
+    "spec": {
+      "width": 1000,
+      "height": 50,
+      "view": {"stroke": null},
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "title": "Year",
+          "timeUnit": "year",
+          "axis": {"format": "%Y"}
+        },
+        "y": {
+          "field": "TIV",
+          "type": "quantitative",
+          "aggregate": "mean",
+          "scale": {"zero": false},
+          "axis": {"title": null, "labels": false, "ticks": false}
+        }
+      }
+    },
+    "config": {"axis": {"grid": false, "domain": false}}
+  }

@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 450,
+    "title": "Trend indicator value (TIV) of exports of arms worldwide",
+    "projection": {"type": "equirectangular"},
+    
+    "data": {
+        "url": "ne_110m.json",
+        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+      },
+      "transform": [
+        {
+          "lookup": "properties.NAME",
+          "from": {
+            "data": {
+              "url": "TIV_Exports_clean.csv"
+            },
+            "key": "Country",
+            "fields": ["Totals"]
+          }
+        },
+        {"calculate": "(datum.Totals)/1000 + 0.01", "as": "Total Exports"},
+        {"calculate": "(datum.Totals)/1000", "as": "TooltipValues"}
+      ],
+      "mark": {"type": "geoshape"},
+      "encoding": {
+        "color": {
+          "field": "Total Exports",
+          "type": "quantitative",
+          "scale": {"type": "log"}
+        },
+        "tooltip": [
+          {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+          {"field": "TooltipValues", "type": "quantitative", "title": "Total TIV in billions of USD"}
+        ]
+      }
+}

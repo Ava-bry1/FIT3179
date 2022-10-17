@@ -1,0 +1,51 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "TIV_Type_trade_clean.csv"
+    },
+    "title": "Arms exports by type and year",
+    "transform": [
+        {"calculate": "datum.TIV", "as": "TIV_recalc"}
+      ],
+    "config": {
+        "view": {
+            "strokeWidth": 0,
+            "step": 10
+        },
+        "axis": {
+            "domain": false
+        }
+    },
+    "mark": "rect",
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "timeUnit": "year",
+            "type": "ordinal",
+            "title": "Year",
+            "axis": {
+                "labelAngle": 0,
+                "format": "%Y"
+            }
+        },
+        "y": {
+            "field": "Type",
+            "type": "nominal",
+            "title": "Month"
+        },
+        "color": {
+            "field": "TIV_recalc",
+            "aggregate": "max",
+            "type": "quantitative",
+            "legend": {
+                "title": "Trend indicator value (TIV, millions)",
+                "direction": "horizontal",
+                "orient": "bottom"
+            }
+        },
+        "tooltip": [
+          {"field": "Type", "type": "nominal", "title": "Arms type: "},
+          {"field": "TIV", "type": "quantitative", "title": "Traded TIV (millions)"}
+        ]
+    }
+  }
